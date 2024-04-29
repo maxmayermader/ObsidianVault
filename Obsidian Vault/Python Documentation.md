@@ -8,18 +8,21 @@
 * Dictionaries
 * Tuples
 * Sets
-* None*
+* None
 
 ### [[Basics]]
 * Comparison Operators
 * Logical Operators
 * Loops
 * Range
+* Heap
 * Enumerate
 * Counter
 * Named Tuple
 * OrderedDict
 * Class
+* Linked List
+* Trees
 
 ### [[Functions]]
 * Functions
