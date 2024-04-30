@@ -12,6 +12,7 @@
 * [[#Linked List]]
 * [[#Trees]]
 * [[#Deque (Que)]]
+* [[#Graphs]]
 
 Back to [[Python Documentation]]
 
@@ -247,6 +248,8 @@ queue.reverse() # reverses order of queue elements
 ```
 ## Linked List
 ## Trees
+
+## Graphs
 
 
 
