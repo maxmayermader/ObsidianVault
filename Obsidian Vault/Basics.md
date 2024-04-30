@@ -3,14 +3,15 @@
 * [[#Logical Operators]]
 * [[#Loops]]
 * [[#Range]]
-* [[#Heap]]
 * [[#Enumerate]]
 * [[#Counter]]
 * [[#Named Tuple]]
 * [[#OrderedDict]]
 * [[#Class]]
+*  [[#Heap]]
 * [[#Linked List]]
 * [[#Trees]]
+* [[#Deque (Que)]]
 
 Back to [[Python Documentation]]
 
@@ -187,6 +188,62 @@ heapq.heappop(nums) # Pop an element from the heap
 # and the returned value from that function is then used to rank that element in the heap
 heapq.nlargest(k, iterable, key = fun)
 heapq.nsmallest(k, iterable, key = fun)
+```
+
+```python
+#Max heap in python 
+
+#By default heapq in python is min heap, 
+#if we want to use max heap we can simply invert the value of the keys and use heapq. 
+#For example, turn 1000.0 into -1000.0 and 5.0 into -5.0.
+
+#The easiest and ideal solution
+#Multiply the values by -1
+
+#All the highest numbers are now the lowest and vice versa.
+
+#Just remember that when you pop an element to multiply it with -1 in order to get the original value again.
+
+#Example: 
+
+import heapq
+heap = []
+heapq.heappush(heap, 1*(-1))
+heapq.heappush(heap, 10*(-1))
+heapq.heappush(heap, 20*(-1))
+print(heap)
+
+The output will look like:
+
+[-20, -1, -10]
+
+#when popping element multiply it with -1
+
+max_element = -heapq.heappop(heap)
+print(max_element)
+
+Output will be:
+20
+```
+You can put arrays in the heap and the heap will look at first element for heapify.
+## Deque (Que)
+```python 
+from collections import deque
+
+queue = deque(['name','age','DOB'])
+
+queue.append("append_from_right") # Append from right
+queue.pop() # Pop from right
+
+queue.appendleft("fromLeft") # Append from left
+queue.popleft() # Pop from left
+
+queue.index(element,begin_index,end_index) # Returns first index of element b/w the 2 indices.
+queue.insert(index,element)
+queue.remove() # removes first occurrance
+queue.count() # obvious
+
+queue.reverse() # reverses order of queue elements
 ```
 ## Linked List
 ## Trees

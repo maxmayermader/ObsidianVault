@@ -11,8 +11,12 @@
             "id": "bb19b35a72abd38a",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Python Documentation.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -82,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Python Documentation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Python Documentation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Python Documentation.md"
+              }
             }
           }
         ]
@@ -141,9 +149,9 @@
   },
   "active": "bb19b35a72abd38a",
   "lastOpenFiles": [
+    "Basics.md",
     "().md",
     "[.md",
-    "Basics.md",
     "Python Documentation.md",
     "Types.md",
     "Functions.md",
