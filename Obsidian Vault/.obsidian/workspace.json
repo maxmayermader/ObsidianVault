@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bb19b35a72abd38a",
+            "id": "8dd734a24d106ae4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python Documentation.md",
+                "file": "Advanced Graphs.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Contents",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "899642759a5972c7",
@@ -86,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python Documentation.md",
+                "file": "Advanced Graphs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Python Documentation.md",
+                "file": "Advanced Graphs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python Documentation.md"
+                "file": "Advanced Graphs.md"
               }
             }
           }
@@ -147,16 +148,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bb19b35a72abd38a",
+  "active": "8dd734a24d106ae4",
   "lastOpenFiles": [
-    "Advanced Python.md",
-    "Python Documentation.md",
-    "Useful Algorithms.md",
-    "Basics.md",
+    "Leetcode.md",
+    "Advanced Graphs.md",
+    "Two Pointer.md",
+    "Array and Hashing.md",
     "().md",
+    "HW1.md",
+    "476.md",
+    "Python Documentation.md",
+    "Advanced Python.md",
+    "Functions.md",
+    "Basics.md",
+    "Useful Algorithms.md",
     "[.md",
     "Types.md",
-    "Functions.md",
     "[Types.md"
   ]
 }

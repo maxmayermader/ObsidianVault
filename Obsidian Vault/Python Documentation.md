@@ -38,7 +38,6 @@
 * Iterators
 * Generators
 * Decorators
-* Class
 * Exceptions
 * Command Line Arguments
 * File IO

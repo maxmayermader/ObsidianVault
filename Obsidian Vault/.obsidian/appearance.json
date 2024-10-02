@@ -1,5 +1,9 @@
 {
   "accentColor": "",
-  "cssTheme": "Obsidian Nord",
-  "theme": "obsidian"
+  "cssTheme": "Faded",
+  "theme": "obsidian",
+  "interfaceFontFamily": "Arial",
+  "textFontFamily": "Arial",
+  "monospaceFontFamily": "Arial",
+  "translucency": true
 }
