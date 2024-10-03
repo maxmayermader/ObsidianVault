@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Advanced Graphs.md",
+                "file": "Intervals.md",
                 "mode": "source",
                 "source": false
               }
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Advanced Graphs.md",
+                "file": "Intervals.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Advanced Graphs.md",
+                "file": "Intervals.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Advanced Graphs.md"
+                "file": "Intervals.md"
               }
             }
           }
@@ -151,8 +151,10 @@
   "active": "8dd734a24d106ae4",
   "lastOpenFiles": [
     "Leetcode.md",
-    "Graphs.md",
+    "Intervals.md",
+    "Sliding Window.md",
     "Advanced Graphs.md",
+    "Graphs.md",
     "Two Pointer.md",
     "Array and Hashing.md",
     "().md",
