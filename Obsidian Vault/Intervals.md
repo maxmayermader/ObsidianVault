@@ -52,3 +52,31 @@ class Solution:
         res.append(newInterval)
         return res
 ```
+
+## [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+### Steps
+- Sort the arry by first value
+- keep track of start and ending values
+- if an end is greater than the next merge the two intervals
+- if next is greater than end
+	- append start and end to the array and get the new start and end
+
+#### Code
+```python
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        res = []
+        start = intervals[0][0]
+        end = intervals[0][1]
+        for i in range(1, len(intervals)):
+            if end >= intervals[i][0]:
+                end = max(end, intervals[i][1])
+            else:
+                res.append([start, end])
+                start = intervals[i][0]
+                end = intervals[i][1]
+        res.append([start, end])
+
+        return res
+        ```
