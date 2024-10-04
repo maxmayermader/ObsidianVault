@@ -16,7 +16,7 @@ class Solution:
             if intervals[i][1] > intervals[i+1][0]:
                 return False
 
-        return True
+        return True 
 ```
 
 ## [57. Insert Interval](https://leetcode.com/problems/insert-interval/)
@@ -80,3 +80,61 @@ class Solution:
 
         return res
         ```
+
+## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+
+### Steps
+- Sort the array by start
+- go through intervals
+- if interval start is >= prevEnd then we don't worry
+- if the prevEnd is greater than the start
+	- incremnt res
+	- get min the of the the ends
+	----    ---
+		----
+
+#### Code
+```Python
+class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
+        prevEnd = intervals[0][1]
+        res = 0
+        for start, end in intervals[1:]:
+            if start >= prevEnd:
+                prevEnd = end
+            else:
+                res += 1
+                prevEnd = min(prevEnd, end)
+
+        return res
+```
+
+## [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
+### Steps
+* (*You want to find the most overlapping meetings*)
+* You have 2 arrays of start and end times
+* Sort times in 1 array
+* go through times
+	* if start then increment count
+	* if end then decrement count
+	* set max count to res
+
+#### Code
+```python
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        time = []
+        for start, end in intervals:
+            time.append((start, 1))
+            time.append((end, -1))
+        
+        time.sort()
+        
+        count = 0
+        max_count = 0
+        for t in time:
+            count += t[1]
+            max_count = max(max_count, count)
+        return max_count
+```
