@@ -18,17 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "8b8c7fa72967e73b",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,6 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Greedy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,6 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Greedy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +126,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Greedy.md"
+              }
             }
           }
         ]
@@ -153,17 +148,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8b8c7fa72967e73b",
+  "active": "8dd734a24d106ae4",
   "lastOpenFiles": [
     "Leetcode.md",
+    "Array and Hashing.md",
+    "Greedy.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
     "Graphs.md",
     "Advanced Graphs.md",
-    "Greedy.md",
     "Intervals.md",
     "Sliding Window.md",
     "Two Pointer.md",
     "ski.md",
-    "Array and Hashing.md",
     "().md",
     "HW1.md",
     "476.md",

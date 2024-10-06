@@ -64,3 +64,30 @@ class Solution:
 
         return [res[q] for q in queries]
 ```
+
+## [271. Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)
+### Steps
+- Encode:
+    - Convert each string to "length:string" format
+    - Concatenate all these formatted strings
+- Decode:
+    - Iterate through the encoded string
+    - For each section, extract the length, then the corresponding string
+    - Add each extracted string to the result list
+- Key idea: Use string length as a prefix to eliminate need for delimiters
+
+#### Code
+```python
+class Codec:
+    def encode(self, strs: List[str]) -> str:
+        return "".join(f'{len(s)}:{s}' for s in strs)
+
+    def decode(self, s: str) -> List[str]:
+        result, i = [], 0
+        while i < len(s):
+            j = s.find(':', i)
+            length = int(s[i:j])
+            result.append(s[j+1:j+1+length])
+            i = j + 1 + length
+        return result
+```
