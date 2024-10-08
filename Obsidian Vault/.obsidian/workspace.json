@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Greedy.md",
+                "file": "Leetcode.md",
                 "mode": "source",
                 "source": false
               }
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Greedy.md",
+                "file": "Leetcode.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Greedy.md",
+                "file": "Leetcode.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Greedy.md"
+                "file": "Leetcode.md"
               }
             }
           }
@@ -135,8 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -150,9 +149,9 @@
   },
   "active": "8dd734a24d106ae4",
   "lastOpenFiles": [
+    "Greedy.md",
     "Leetcode.md",
     "Array and Hashing.md",
-    "Greedy.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Graphs.md",
