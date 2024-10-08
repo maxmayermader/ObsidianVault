@@ -138,12 +138,36 @@ class Solution:
 ```
 
 
+# [1899. Merge Triplets to Form Target Triplet](https://leetcode.com/problems/merge-triplets-to-form-target-triplet/)
+### Steps
+- store indices of target values in the triplets in a set
+	- go through triplets 
+		- add indices if the values are in the triplets
+- if set == True, then return true
+
+#### Code
+```python
+class Solution:
+    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+        good = set()
+
+        for t in triplets:
+            if t[0] > target[0] or t[1] > target[1] or t[2] > target[2]:
+                continue
+            for i, v in enumerate(t):
+                if v == target[i]:
+                    good.add(i)
+
+        return len(good) == 3
+```
+
 # [763. Partition Labels](https://leetcode.com/problems/partition-labels/)
 ### Steps
 - Use a *HM* for characters and the index of their last appearance
 - loop through input string keeping track of partition size
 	- set the end to the maximum end of visited chars
 	- once you reach end append size to res, reset size and end
+
 
 #### Code
 ```python
@@ -201,4 +225,3 @@ class Solution:
             
         return leftMin == 0
 ```
-
