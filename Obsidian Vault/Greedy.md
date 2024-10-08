@@ -101,4 +101,40 @@ class Solution:
 
 
 
-# y
+# [846. Hand of Straights](https://leetcode.com/problems/hand-of-straights/)
+### Steps
+- Create a hm of the hand count
+- Heapify the keys from HM
+- go through pq
+	- get top of the heap
+		- loop for group size
+			- if the next consequtive value is not in the loop return False
+			- if the count of val is 0 and it's not the top of the heap return False
+			- if the count of val is 0 then pop it from the heap
+
+#### Code
+```python
+class Solution:
+    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
+        if len(hand) % groupSize != 0:
+            return False
+
+        hm = collections.Counter(hand)
+        pq = []
+        for key in hm:
+            heapq.heappush(pq, key)
+        print(pq)
+
+        while pq:
+            top = pq[0]
+            for val in range(top, groupSize+top):
+                if val not in hm:
+                    return False
+                hm[val] -= 1
+                if hm[val] == 0:
+                    if val != pq[0]:
+                        return False
+                    heapq.heappop(pq)
+
+        return True
+```
