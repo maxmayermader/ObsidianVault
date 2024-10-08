@@ -23,7 +23,7 @@ class Solution:
 ```
 
 
-## [55. Jump Game](https://leetcode.com/problems/jump-game/)
+# [55. Jump Game](https://leetcode.com/problems/jump-game/)
 ### Steps
 - Can the goal reach the start
 - start at the goal and work you way back
@@ -69,7 +69,6 @@ class Solution:
 ```
 
 
-
 # [134. Gas Station](https://leetcode.com/problems/gas-station/)
 ### Steps
 - -First, check if a solution is possible by comparing total gas to total cost
@@ -98,7 +97,6 @@ class Solution:
 
         return res
 ```
-
 
 
 # [846. Hand of Straights](https://leetcode.com/problems/hand-of-straights/)
@@ -138,3 +136,69 @@ class Solution:
 
         return True
 ```
+
+
+# [763. Partition Labels](https://leetcode.com/problems/partition-labels/)
+### Steps
+- Use a *HM* for characters and the index of their last appearance
+- loop through input string keeping track of partition size
+	- set the end to the maximum end of visited chars
+	- once you reach end append size to res, reset size and end
+
+#### Code
+```python
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        hm = {}
+        for i, c in enumerate(s):
+            hm[c] = i
+
+        res = []
+        end = 0
+        size = 0
+        for i in range(len(s)):
+            end = max(end, hm[s[i]])
+            size+=1
+
+            if i == end:
+                res.append(size)
+                size = 0
+
+        return res
+```
+
+
+# [678. Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string/)
+### Steps
+- keep track of the max num of left and right parenthesis
+- loop through string
+	- if there is an opening parentheses increment both left and right max
+	- if there is a closing decrement both left and right parentheses
+	- If you have a wild card increase max and decrement min
+	- if max parentheses is < 0 return False (you have more closing parentheses than possible openings)
+	- reset left to 0 if, min < 0 
+
+#### Code
+```python
+class Solution:
+    def checkValidString(self, s: str) -> bool:
+        leftMin, rightMax = 0,0
+
+        for c in s:
+            if c == '(':
+                leftMin += 1
+                rightMax += 1
+            elif c == ')':
+                leftMin -= 1
+                rightMax -= 1
+            else:
+                leftMin -= 1
+                rightMax += 1
+            if rightMax < 0:
+                return False
+            if leftMin < 0:
+                leftMin = 0
+            
+        return leftMin == 0
+```
+
