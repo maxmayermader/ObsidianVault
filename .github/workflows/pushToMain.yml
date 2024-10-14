@@ -2,7 +2,9 @@ name: Merge to Main
 
 on:
   push:
-    branches: [ "mac", "pc" ]
+    branches: [ "main", "mac", "PC" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   merge-to-main:
