@@ -2,7 +2,7 @@ name: Merge to Main
 
 on:
   push:
-    branches: [ "mac", "PC" ]
+    branches: [ "mac", "pc" ]
 
 jobs:
   merge-to-main:
