@@ -1,12 +1,28 @@
-# This is a basic workflow to help you get started with Actions
+name: Merge to Main
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main", "mac", "PC" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "mac", "PC" ]
 
+jobs:
+  merge-to-main:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Merge to main
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git checkout main
+        git merge ${{ github.ref }} --no-ff -m "Merge ${{ github.ref }} into main"
+        git push origin main
+
+    - name: Check for merge conflicts
+      if: failure()
+      run: |
+        echo "Merge conflict detected. Please resolve conflicts manually."
+        exit 1
