@@ -110,4 +110,23 @@ class Solution:
         return res
 ```
 
-# 
+# [853. Car Fleet](https://leetcode.com/problems/car-fleet/)
+### Steps
+- Sort cars by position
+- Add the time taken to reach the target to the stack
+- if the time taken for -1 <= -2, then pop from the stack. (previous car will catch up to the car in front)
+
+```python
+class Solution:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        cars = [(position[i], speed[i]) for i in range(len(speed))]
+        cars.sort(reverse=True)
+        stack=[]
+        for p, s in cars:
+            stack.append((target - p) / s)
+            if len(stack) >= 2 and stack[-1] <= stack[-2]:
+                stack.pop()
+
+        return len(stack)
+```
+
