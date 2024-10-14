@@ -130,4 +130,3 @@ class Solution:
         return len(stack)
 ```
 
-test
