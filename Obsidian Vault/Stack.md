@@ -26,7 +26,7 @@ class MinStack:
 
 # [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
 ### Steps
-- Use a stack. append numbers and pop 2 numbers when there is an operator and append the result
+- Use a stack. Pop 2 numbers when there is an operator and push the result and append all numbers 
 
 #### Code
 ```python
@@ -54,3 +54,5 @@ class Solution:
 
         return s[0]
 ```
+
+# 
