@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8dd734a24d106ae4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Stack.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d13e40fab6aa57c3",
             "type": "leaf",
             "state": {
@@ -28,11 +16,12 @@
                 "file": "Greedy.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Greedy"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -52,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -67,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -75,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ],
@@ -108,7 +103,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Greedy"
             }
           },
           {
@@ -120,7 +117,9 @@
                 "file": "Greedy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Greedy"
             }
           },
           {
@@ -131,7 +130,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -141,7 +142,9 @@
               "type": "outline",
               "state": {
                 "file": "Greedy.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Greedy"
             }
           }
         ]
@@ -163,14 +166,14 @@
   },
   "active": "d13e40fab6aa57c3",
   "lastOpenFiles": [
+    "Stack.md",
+    "Greedy.md",
     "Leetcode.md",
     "Graphs.md",
-    "Stack.md",
     "Two Pointer.md",
     "1 DP.md",
     "Heap/PQ.md",
     "Heap",
-    "Greedy.md",
     "Array and Hashing.md",
     "Untitled 1.canvas",
     "Untitled.canvas",

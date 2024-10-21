@@ -130,3 +130,36 @@ class Solution:
         return len(stack)
 ```
 
+# [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+### Steps
+- Keep track of max area
+- Use a stack
+	- if current height is greater than top of stack, then add it to the stack and the index
+		- Pop from the stack and get height x (curr index - index). See if this is the new max height
+		- Keep popping and calculating until the current height is >=   top of stack
+		- Set the new index to the last popped index
+	- Add height at new index to stack
+- If the stack is not empty
+	- calculate remaining heights by height(end-index)
+
+#### Code
+```python
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        res = 0
+        stack = []
+
+        for i, currh in enumerate(heights):
+            start = i # begin of new rectangle 
+            while stack and  stack[-1][1] > currh:
+                index, sheight = stack.pop()
+                res = max(res, sheight*(i - index))
+                start = index # set new index to the first el that is >=  currh
+            stack.append((start, currh))
+
+        while stack:
+           index, sheight = stack.pop()
+           res = max(res, sheight*(len(heights)-index)) 
+
+        return res
+```
