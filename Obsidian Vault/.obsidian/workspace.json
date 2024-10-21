@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graphs.md",
+                "file": "Greedy.md",
                 "mode": "source",
                 "source": false
               }
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graphs.md",
+                "file": "Greedy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Graphs.md",
+                "file": "Greedy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graphs.md"
+                "file": "Greedy.md"
               }
             }
           }
@@ -164,6 +164,7 @@
   "active": "d13e40fab6aa57c3",
   "lastOpenFiles": [
     "Leetcode.md",
+    "Graphs.md",
     "Stack.md",
     "Two Pointer.md",
     "1 DP.md",
@@ -173,7 +174,6 @@
     "Array and Hashing.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "Graphs.md",
     "Advanced Graphs.md",
     "Intervals.md",
     "Sliding Window.md",

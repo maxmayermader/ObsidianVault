@@ -225,3 +225,29 @@ class Solution:
             
         return leftMin == 0
 ```
+
+# [881. Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)
+### Steps
+- Sort the input and use 2 pointers
+- if 2 people cannot fit on 1 boat then we know 1 person is 2 heavy and they will get their own boat(heaviest is on the right)
+- else, 2 people can fit on one boat so move both pointers
+
+#### Code
+```python
+class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+        res = 0
+        people.sort()
+        l,r = 0, len(people)-1
+
+        while l <= r:
+            if people[l] + people[r] > limit:
+                res += 1
+                r -= 1
+            else:
+                res += 1
+                l += 1
+                r -= 1
+
+        return res
+```
