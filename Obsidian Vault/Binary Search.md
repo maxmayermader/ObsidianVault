@@ -118,4 +118,39 @@ class Solution:
         return min(minNum, nums[0])
 ```
 
-#
+# [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+### Steps
+- Check if the left <= mid (checking left)
+	- If mid < target or left > target, move to the right (Mid could be bigger than left but left shouldn't be bigger than the target if it is sorted properly)
+- Else (checking right portion because array has been rotated)
+	- if mid > target or right < target, then move pointer left (mid should be smaller than right but shouldn't be smaller than the target)
+
+#### Code
+```python
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums)-1
+        while l <= r:
+            m = (r+l)//2
+            if nums[m] == target:
+                return m
+            if nums[l] <= nums[m]:
+                if nums[l] > target or nums[m] < target:
+                    l = m + 1
+                else:
+                    r = m - 1
+            else:
+                if nums[r] < target or nums[m] > target:
+                    r = m - 1
+                else:
+                    l = m + 1
+```
+
+# [981. Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store/)
+### Steps
+- 
+
+#### Code
+```python
+
+```
