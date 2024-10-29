@@ -1,3 +1,5 @@
+## [[Templates]]
+
 ## [[Array and Hashing]]
 
 ## [[Two Pointer]]

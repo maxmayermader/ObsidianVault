@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 ### Steps
 * Use *HM*, if you find a value in the *HM*, then there is a duplicate
@@ -140,8 +142,7 @@ class Solution:
                     cols[j].add(board[i][j])
                     diags[((i//3), (j//3))].add(board[i][j])
 
-        return True
-                    
+        return True    
 ```
 
 
@@ -177,8 +178,7 @@ class Solution:
                 maxSeq = max(seq, maxSeq)
 
 
-        return maxSeq
-        #O(n+n+n)
+        return maxSeq #O(n+n+n)
 ```
 
 ## [271. Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)

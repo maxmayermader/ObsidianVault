@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Leetcode.md",
+                "file": "Templates.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Leetcode"
+              "title": "Templates"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Array and Hashing.md",
+                "file": "Templates.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Array and Hashing"
+              "title": "Templates"
             }
           },
           {
@@ -208,9 +208,11 @@
   },
   "active": "503633284fe01e15",
   "lastOpenFiles": [
-    "Greedy.md",
-    "Leetcode.md",
     "Array and Hashing.md",
+    "Templates.md",
+    "Leetcode.md",
+    "().md",
+    "Greedy.md",
     "Sliding Window.md",
     "Binary Search.md",
     "Two Pointer.md",
@@ -224,7 +226,6 @@
     "Advanced Graphs.md",
     "Intervals.md",
     "ski.md",
-    "().md",
     "HW1.md",
     "476.md",
     "Python Documentation.md",
