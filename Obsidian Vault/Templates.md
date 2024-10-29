@@ -8,14 +8,21 @@
 7. [[#Queue Template]]
 9. [[#Tree Traversal Templates]]
 10. [[#Graph Template (Adjacency List)]]
-11. [[#Heap/Priority Queue Template]]
-12. [[#Backtracking Template]]
-13. [[#Trie Template]]
-14. [[#Union Find Template]]
-15. [[#Intervals Template]]
-16. [[#Greedy Template]]
-17. [[#Dynamic Programming Templates]]
-18. [[#Math & Geometry Template]]
+11. [[#Advanced Graphs]]
+	- [[#Dijkstra's Algorithm]]
+	- [[#Prim's Algorithm (MST)]]
+	- [[#Bellman-Ford Algorithm]]
+	- [[#Union Find Template]]
+	- [[#Kruskal's Algorithm (MST)]]
+	- [[#Topological Sort]]
+13. [[#Heap/Priority Queue Template]]
+14. [[#Backtracking Template]]
+15. [[#Trie Template]]
+16. [[#Intervals Template]]
+17. [[#Greedy Template]]
+18. [[#Dynamic Programming Templates]]
+19. [[#Math & Geometry Template]]
+
 
 ## Array/List Operations 
 [[Array and Hashing]]
@@ -238,6 +245,193 @@ class Graph:
 				self.dfs(neighbor, visited)
 ```
 
+## Advanced Graphs
+[[Advanced Graphs]]
+### Dijkstra's Algorithm
+**Keywords**: "shortest path", "weighted", "non-negative edges"  
+**Runtime**: O(E log V) with priority queue
+
+```python
+def dijkstra(graph, start):     
+	distances = {node: float('inf') for node in graph}    
+	distances[start] = 0    
+	pq = [(0, start)]    
+	visited = set()         
+	
+	while pq:        
+		curr_dist, curr = heapq.heappop(pq)                 
+		if curr in visited:            
+			continue                     
+		visited.add(curr)                 
+		for neighbor, weight in graph[curr].items():            
+			distance = curr_dist + weight                         
+				if distance < distances[neighbor]:                
+					distances[neighbor] = distance                
+					heapq.heappush(pq, (distance, neighbor))                     
+	return distances
+
+def dijkstra(self, grid: List[List[int]]) -> int: 
+	ROWS, COLS = len(grid), len(grid[0]) # Grid dimensions 
+	# Initialize visited set and priority queue 
+	visited = set() 
+	minHeap = [[0, 0, 0]] # [distance/cost/time, row, col] 
+	
+	# Possible directions (can be modified based on problem) 
+	directions = [[0, 1], [0, -1], [1, 0], [-1, 0]] # For diagonal movement add: [1,1], [1,-1], [-1,1], [-1,-1] 
+	
+	# Add starting position to visited 
+	visited.add((0, 0)) 
+	while minHeap: 
+		dist, row, col = heapq.heappop(minHeap) # Get current position with minimum distance 
+		# Check if reached destination (modify based on problem) 
+		if row == ROWS - 1 and col == COLS - 1: 
+			return dist 
+			
+		# Explore neighbors 
+		for dx, dy in directions: 
+			newRow, newCol = row + dx, col + dy 
+			# Check boundaries and visited state 
+			if (newRow < 0 or newCol < 0 
+			or newRow >= ROWS or newCol >= COLS
+			or (newRow, newCol) in visited): 
+				continue 
+				# Mark as visited 
+				visited.add((newRow, newCol)) 
+				# Calculate new distance (modify based on problem) 
+				newDist = max(dist, grid[newRow][newCol]) # Example calculation 
+				# Alternative calculations: 
+				# newDist = dist + grid[newRow][newCol] 
+				# For cumulative path 
+				# newDist = max(dist, abs(grid[newRow][newCol] - grid[row][col])) for difference 
+				
+				# Add to priority queue 
+				heapq.heappush(minHeap, [newDist, newRow, newCol]) 
+			
+	return -1 # If no path found
+```
+
+### Prim's Algorithm (MST)
+**Keywords**: "minimum spanning tree", "connected", "undirected"  
+**Runtime**: O(E log V) with priority queue
+
+```python
+def prims(graph):     
+	start_vertex = list(graph.keys())[0]    
+	mst = set()    
+	visited = {start_vertex}    
+	edges = [(cost, start_vertex, to) for to, cost in
+			graph[start_vertex].items()]    
+	heapq.heapify(edges)         
+	
+	while edges:        
+		cost, frm, to = heapq.heappop(edges)                 
+		if to not in visited:           
+			visited.add(to)            
+			mst.add((frm, to, cost))                         
+			for next_to, next_cost in graph[to].items():                
+				if next_to not in visited:                    
+					heapq.heappush(edges, (next_cost, to, next_to))                       
+	return mst
+```
+
+### Bellman-Ford Algorithm
+**Keywords**: "negative edges", "negative cycles", "shortest path"  
+**Runtime**: O(VE)
+
+```python
+def bellman_ford(graph, start):     
+	distances = {node: float('inf') for node in graph}    
+	distances[start] = 0         
+	# Relax all edges V-1 times    
+	for _ in range(len(graph) - 1):        
+		for u in graph:            
+			for v, weight in graph[u].items():                
+				if distances[u] + weight < distances[v]:                    
+					distances[v] = distances[u] + weight        
+					
+	# Check for negative cycles    
+	for u in graph:        
+		for v, weight in graph[u].items():            
+			if distances[u] + weight < distances[v]:                
+				return None  # Negative cycle exists                     
+				
+	return distances
+```
+
+### Union Find Template
+**Keywords**: "connected components", "groups", "islands", "connections"  
+**Runtime**: O(α(n)) ≈ O(1) for union and find operations
+
+```python
+class UnionFind:     
+	def __init__(self, n):        
+		self.parent = list(range(n))        
+		self.rank = [0] * n         
+		
+	def find(self, x):        
+		if self.parent[x] != x:            
+			self.parent[x] = self.find(self.parent[x])  # Path compression 
+		return self.parent[x]         
+		
+	def union(self, x, y):        
+		px, py = self.find(x), self.find(y)        
+		if px == py:            
+			return False                 
+			
+		# Union by rank        
+		if self.rank[px] < self.rank[py]:            
+			px, py = py, px        
+		self.parent[py] = px        
+		if self.rank[px] == self.rank[py]:            
+			self.rank[px] += 1        
+		return True
+```
+
+### Kruskal's Algorithm (MST)
+**Keywords**: "minimum spanning tree", "disjoint set", "union find"  
+**Runtime**: O(E log E)
+
+```python
+def kruskals(graph):     
+	edges = []    
+	for u in graph:        
+		for v, weight in graph[u].items():            
+			edges.append((weight, u, v))         
+		edges.sort()  # Sort by weight    
+		uf = UnionFind(graph.keys())    
+		mst = []         
+		for weight, u, v in edges:        
+			if uf.union(u, v):            
+				mst.append((u, v, weight))                 
+				
+	return mst
+```
+
+### Topological Sort
+**Keywords**: "dependencies", "DAG", "ordering", "prerequisites"  
+**Runtime**: O(V + E)
+
+```python
+def topological_sort(graph):     
+	indegree = {node: 0 for node in graph}    
+	for node in graph:        
+		for neighbor in graph[node]:            
+			indegree[neighbor] += 1         
+	queue = deque([node for node, count in indegree.items() if count == 0])   
+	result = []         
+	
+	while queue:        
+		node = queue.popleft()        
+		result.append(node)                 
+		for neighbor in graph[node]:            
+			indegree[neighbor] -= 1            
+			if indegree[neighbor] == 0:                
+				queue.append(neighbor)                     
+				
+	return result if len(result) == len(graph) else []  # Check for cycles
+```
+
+
 
 ## Heap/Priority Queue Template
 [[Heap/PQ]]
@@ -336,35 +530,7 @@ class Trie:
 ```
 
 
-## Union Find Template
-[[Advanced Graphs]]
-**Keywords**: "connected components", "groups", "islands", "connections"  
-**Runtime**: O(α(n)) ≈ O(1) for union and find operations
 
-```python
-class UnionFind:     
-	def __init__(self, n):        
-		self.parent = list(range(n))        
-		self.rank = [0] * n         
-		
-	def find(self, x):        
-		if self.parent[x] != x:            
-			self.parent[x] = self.find(self.parent[x])  # Path compression 
-		return self.parent[x]         
-		
-	def union(self, x, y):        
-		px, py = self.find(x), self.find(y)        
-		if px == py:            
-			return False                 
-			
-		# Union by rank        
-		if self.rank[px] < self.rank[py]:            
-			px, py = py, px        
-		self.parent[py] = px        
-		if self.rank[px] == self.rank[py]:            
-			self.rank[px] += 1        
-		return True
-```
 
 
 ## Intervals Template\
