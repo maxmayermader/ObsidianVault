@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 ### Steps
 - We want to loop through the array

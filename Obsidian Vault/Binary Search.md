@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [704. Binary Search](https://leetcode.com/problems/binary-search/)
 ### Steps
 - array is sorted so we can do divided and conquer

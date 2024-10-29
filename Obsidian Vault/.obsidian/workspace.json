@@ -25,14 +25,10 @@
             "id": "503633284fe01e15",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Templates.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Templates"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           },
           {
@@ -63,8 +59,7 @@
               "title": "Greedy"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -137,8 +132,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Binary Search.md",
-                "collapseAll": false,
+                "file": "Templates.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -147,7 +142,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Binary Search"
+              "title": "Backlinks for Templates"
             }
           },
           {
@@ -156,12 +151,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Binary Search.md",
+                "file": "Templates.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Binary Search"
+              "title": "Outgoing links from Templates"
             }
           },
           {
@@ -183,13 +178,14 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Binary Search.md"
+                "file": "Templates.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Binary Search"
+              "title": "Outline of Templates"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -206,25 +202,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "503633284fe01e15",
+  "active": "147735d50fd11657",
   "lastOpenFiles": [
-    "Advanced Graphs.md",
-    "Templates.md",
-    "Array and Hashing.md",
     "Leetcode.md",
-    "().md",
-    "Greedy.md",
-    "Sliding Window.md",
-    "Binary Search.md",
-    "Two Pointer.md",
-    "Stack.md",
-    "Graphs.md",
+    "Templates.md",
     "1 DP.md",
+    "Greedy.md",
+    "Intervals.md",
+    "Tries.md",
+    "Backtracking.md",
     "Heap/PQ.md",
     "Heap",
+    "Advanced Graphs.md",
+    "Graphs.md",
+    "Trees.md",
+    "Stack.md",
+    "Linked List.md",
+    "Sliding Window.md",
+    "Two Pointer.md",
+    "Binary Search.md",
+    "Array and Hashing.md",
+    "().md",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "Intervals.md",
     "ski.md",
     "HW1.md",
     "476.md",
@@ -232,9 +232,6 @@
     "Advanced Python.md",
     "Functions.md",
     "Basics.md",
-    "Useful Algorithms.md",
-    "[.md",
-    "Types.md",
-    "[Types.md"
+    "Useful Algorithms.md"
   ]
 }

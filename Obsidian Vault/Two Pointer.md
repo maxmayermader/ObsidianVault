@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [15. 3Sum](https://leetcode.com/problems/3sum/)
 ### Steps
 - Sort the input array in ascending order.

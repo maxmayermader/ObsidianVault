@@ -119,6 +119,70 @@ def sliding_window(arr):
 	return result
 ```
 
+## Linked List
+[[Linked List]]
+**Keywords**: Singly linked list, Node, Pointer, Sequential access
+**Runtime**: Insertion: O(n) at the end, Search: O(n), Space Complexity: O(1) for operations
+
+```python
+class ListNode: 
+	def __init__(self, val=0, next=None):
+		self.val = val self.next = next 
+		
+class LinkedList: 
+	def __init__(self): 
+		self.head = None 
+		
+	def insert(self, val): 
+		newNode = ListNode(val) 
+		if not self.head: 
+			self.head = newNode 
+			return 
+			
+		current = self.head 
+		while current.next: 
+			current = current.next 
+		current.next = newNode
+```
+
+### Fast and Slow Pointer Template
+**Keywords**: Floyd's Cycle Detection, Tortoise and Hare, Two Pointers, Cycle Finding
+**Runtime Complexity**:
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+- Cycle Detection: Guaranteed to find cycle in at most n step
+```python
+def floyd_cycle_detection(head): 
+	if not head or not head.next: 
+		return None 
+		
+	# Initialize pointers 
+	slow = head 
+	fast = head 
+	
+	# Find meeting point
+	 while fast and fast.next: 
+		 slow = slow.next 
+		 fast = fast.next.next 
+		 if slow == fast: 
+			 return slow # Cycle detected 
+	return None # No cycle found 
+	
+def find_cycle_start(head): 
+	meeting_point = floyd_cycle_detection(head) 
+	if not meeting_point: 
+		return None 
+		
+	# Reset one pointer to head 
+	pointer = head 
+	while pointer != meeting_point: 
+		pointer = pointer.next 
+		meeting_point = meeting_point.next 
+		
+	return pointer # Start of cycle
+```
+
+
 
 ## Stack Template
 [[Stack]]
@@ -145,6 +209,8 @@ class Stack:
 		return len(self.stack) == 0
 ```
 
+
+
 ## Queue Template
 **Keywords**: "first", "order", "level", "BFS"  
 **Runtime**: O(1) for most operations
@@ -168,6 +234,7 @@ from collections import deque class Queue:
 	def is_empty(self):  # O(1)        
 		return len(self.queue) == 0`
 ```
+
 
 
 ## Tree Traversal Templates
@@ -210,6 +277,7 @@ def level_order(root):
 ```
 
 
+
 ## Graph Template (Adjacency List)
 [[Graphs]]
 **Keywords**: "connected", "path", "cycle", "neighbors"  
@@ -244,6 +312,8 @@ class Graph:
 			if neighbor not in visited:                
 				self.dfs(neighbor, visited)
 ```
+
+
 
 ## Advanced Graphs
 [[Advanced Graphs]]
@@ -461,6 +531,7 @@ class PriorityQueue:
 ```
 
 
+
 ## Backtracking Template
 [[Backtracking]]
 **Keywords**: "combinations", "permutations", "subsets", "generate"  
@@ -487,6 +558,7 @@ def backtrack(arr, curr_path, result):     \
 		# Undo choice        
 		curr_path.pop()`
 ```
+
 
 
 ## Trie Template
@@ -530,9 +602,6 @@ class Trie:
 ```
 
 
-
-
-
 ## Intervals Template\
 [[Intervals]]
 **Keywords**: "meeting rooms", "merge", "overlap", "schedule"  
@@ -559,6 +628,7 @@ def interval_template(intervals):
 ```
 
 
+
 ## Greedy Template
 [[Greedy]]
 **Keywords**: "maximum", "minimum", "optimal", "earliest", "latest"  
@@ -579,6 +649,8 @@ def greedy_template(arr):
 			curr = 0         
 	return result
 ```
+
+
 
 ## Dynamic Programming Templates
 [[1 DP]]
@@ -620,6 +692,7 @@ def dp_2d(grid):
 			dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i-1][j-1]
 	return dp[m][n]`
 ```
+
 
 
 ## Math & Geometry Template

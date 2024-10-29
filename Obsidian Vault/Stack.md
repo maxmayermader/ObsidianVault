@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [155. Min Stack](https://leetcode.com/problems/min-stack/)
 ### Steps
 - Normal stack but you keep track of the previous minimum element in the stack with a stack

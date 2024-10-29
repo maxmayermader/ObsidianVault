@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [1135. Connecting Cities With Minimum Cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)
 ### Steps
 - Create an adjacency list of all connected vertices

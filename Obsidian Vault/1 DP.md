@@ -1,3 +1,5 @@
+#### [[Templates]]
+
 # [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 ### Steps
 - subproblem find (n-1) and (n-2), sum = n;
