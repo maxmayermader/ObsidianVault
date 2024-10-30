@@ -35,3 +35,103 @@ class Solution:
         return min(cost[0], cost[1])
 ```
 
+
+# [198. House Robber](https://leetcode.com/problems/house-robber/)
+### Steps
+* The problem uses dynamic programming with only two variables to track the maximum money that can be stolen up to the previous and current houses respectively
+- For each house, we have two options:
+    - Rob the current house and add it to the money from two houses back (n + rob1)
+    - Skip the current house and keep the money from the previous house (rob2)
+- The code slides a "window" of two variables through the array, where:
+    - rob1 represents max money if we ended two houses back
+    - rob2 represents max money if we ended at previous house
+    - temp stores the current best choice between the two options
+- The pattern at each step is:
+    1. Calculate best choice for current house (temp)
+    2. Slide rob2 into rob1
+    3. Make temp the new rob2
+
+#### Code
+```python
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        rob1, rob2 = 0, 0
+
+        for n in nums:
+            temp = max(n + rob1, rob2)
+            rob1 = rob2
+            rob2 = temp
+        return rob2
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
