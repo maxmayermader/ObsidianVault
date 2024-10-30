@@ -49,8 +49,7 @@
               "title": "1 DP"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,19 +192,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d13e40fab6aa57c3",
+  "active": "fae2faf395e04023",
   "lastOpenFiles": [
+    "Advanced Graphs.md",
+    "Sliding Window.md",
+    "1 DP.md",
     "Leetcode.md",
     "Graphs.md",
     "Intervals.md",
-    "Advanced Graphs.md",
     "Backtracking.md",
     "Heap/PQ.md",
     "Tries.md",
     "Trees.md",
     "Linked List.md",
-    "Sliding Window.md",
-    "1 DP.md",
     "Greedy.md",
     "Python Documentation.md",
     "Templates.md",

@@ -1,7 +1,6 @@
 #### [[Templates]]
 
 ## [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
-
 ### Steps
 - Create a window using a deque
 - Keep track of indexes in the q
@@ -41,6 +40,7 @@ class Solution:
         return output
 ```
 
+
 # [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 ### Steps
 * Use a hashmap to store fruits in 
@@ -68,3 +68,79 @@ class Solution:
         return r - l + 1
 ```
 
+# [849. Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)
+### Steps
+- use 2 pointer
+- keep track of first person
+- 3 cases
+	- Open chairs in the beginning
+		- just the index of the first person
+	- Open chairs in the middle
+		- get maxDist of the distance between left and right chairs int divison by 2
+	- Open chairs at the end
+		- if left pointer not set to right 
+			- length - prev chair
+- return max dist found
+
+#### Code
+```python
+class Solution:
+    def maxDistToClosest(self, seats: List[int]) -> int:
+        n = len(seats)
+        prev = -1
+        maxDist = 0
+        
+        for i in range(n):
+            if seats[i] == 1:
+                # Handle distance from start if no person at beginning
+                if prev == -1:
+                    maxDist = i
+                else:
+                    # Calculate distance between two people
+                    maxDist = max(maxDist, (i - prev) // 2)
+                prev = i
+        
+        if prev != n - 1: # Handle distance to end if no person at end
+            maxDist = max(maxDist, n - 1 - prev)
+        return maxDist
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
