@@ -64,22 +64,58 @@ class Solution:
         return rob2
 ```
 
-# 
+# [213. House Robber II](https://leetcode.com/problems/house-robber-ii/)
 ### Steps
-* 
+* Use house robber I, but run it twice
+	* once skipping beginning and once skipping end, return max of the 2
 
 #### Code
 ```python
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
 
+        def helper(arr):
+            rob1, rob2 = 0, 0
+
+            for num in arr:
+                temp = max(num + rob1, rob2)
+                rob1 = rob2
+                rob2 = temp
+            return rob2
+
+        return max(helper(nums[1:]), helper(nums[:-1]))
 ```
 
-# 
+# [647. Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
 ### Steps
-* 
+* 2D matrix
+	* row starting index
+	* col: ending index
+* set $[row][col]$ to True if it is a palindrome
+* Creates a 2D DP table where dp\[i]\[j] represents if substring from index i to j is a palindrome, initialized with False
+* Iterates through the string from right to left (i) and for each i, checks all possible endings (j) from i to end
+	* A substring is marked as palindrome (dp\[i]\[j] = True) when:
+		* Characters at both ends match (s\[i] == s\[j]) AND
+		* Either substring length is ≤ 3 (j - i <= 2) OR inner substring is palindrome (dp\[i + 1]\[j - 1])
+	* If true, increment result
+
 
 #### Code
 ```python
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        n, res = len(s), 0
+        dp = [[0] * n for _ in range(n)]
 
+        for i in range(n - 1, -1, -1):
+            for j in range(i, n):
+                if s[i] == s[j] and (j - i <= 2 or dp[i + 1][j - 1]):
+                    dp[i][j] = 1
+                    res += 1
+
+        return res
 ```
 
 # 
