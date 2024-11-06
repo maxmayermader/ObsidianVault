@@ -118,34 +118,113 @@ class Solution:
         return res
 ```
 
-# 
+# [91. Decode Ways](https://leetcode.com/problems/decode-ways/)
 ### Steps
-* 
+* Have a dp cache
+* Top Bottom search
+	* if i has already been visited just return it
+	* if char at i is 0, return 0
+	* 2 ways to get count
+		* i + 1 == 0 or i + 1 == 2
+		* if i is not at the end of the string and (char at i  and char at i + 1 is between 10 - 26)
+		* save and return count
 
 #### Code
 ```python
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        dp = {len(s):1}
+
+        def dfs(i):
+            if i in dp:
+                return dp[i]
+            if s[i] == '0':
+                return 0
+
+            res = dfs(i+1)
+            if i + 1 < len(s) and 
+            (s[i] == '1'  or (s[i] == '2' and s[i+1] in "0123456")):
+                res += dfs(i+2)
+            dp[i] = res
+            return res
+
+        return dfs(0)
 
 ```
 
-# 
+# [322. Coin Change](https://leetcode.com/problems/coin-change/)
 ### Steps
-* 
+* Use Top-Bottom
+* dp{amount : min}
+* dfs of amount
+	* if amount == 0
+		* return 0
+	* if amount in dp
+		* return dp\[amount]
+	* set currMin to max
+	* for all coins 
+		* if amount - coins >= 0
+			* get new min
+	* cache new amount
+	* return curr min
 
 #### Code
 ```python
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        dp = {}
 
+        def dfs(amount):
+            if amount == 0:
+                return 0
+            if amount in dp:
+                return dp[amount]
+
+            currMin = float('inf')
+            for coin in coins:
+                if amount - coin >= 0:
+                    currMin = min(currMin, 1 + dfs(amount - coin ))
+            dp[amount] = currMin
+            return currMin 
+
+        res = dfs(amount) 
+        return res if res != float('inf') else -1
 ```
 
-# 
+# [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 ### Steps
-* 
+* set result to max num
+* Set curMin and curMax to 1
+* loop through nums
+	* if num is 0:
+		* Set curMin and curMax to 1 and continue
+	* set new currentMax, which is max of
+		*  num or currMax \* n  or currMin \* n
+	* set new currentMin, which is min of
+		*  num or currMax \* n  or currMin \* n
+	* set new result max
+* return result max
 
 #### Code
 ```python
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        res = max(nums)
+        curMin, curMax = 1, 1
 
+        for n in nums:
+            if n == 0:
+                curMin, curMax = 1, 1
+                continue
+            temp = curMax * n
+            curMax = max(n, temp, curMin*n)
+            curMin = min(n, temp, curMin*n)
+            res = max(res, curMax)
+
+        return res       
 ```
 
-# 
+# [139. Word Break](https://leetcode.com/problems/word-break/)
 ### Steps
 * 
 
