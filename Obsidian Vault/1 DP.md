@@ -226,11 +226,28 @@ class Solution:
 
 # [139. Word Break](https://leetcode.com/problems/word-break/)
 ### Steps
-* 
+* Initialize an array `dp` with the same length as `s` and all values initially set to `false`.
+- Iterate `i` over the indices of `s`. At each `i`:
+    - Iterate over each `word` in `wordDict`:
+        - Check if `i == word.length - 1` or `dp[i - word.length] = true`.
+        - If so, and the substring of `s` ending at `i` with the same length as `word` matches, set `dp[i] = true` and `break`.
+- Return `dp[s.length - 1]`.
 
 #### Code
 ```python
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        dp = [False] * (len(s) + 1)
+        dp[len(s)] = True
 
+        for i in range(len(s) - 1, -1, -1):
+            for w in wordDict:
+                if (i + len(w)) <= len(s) and s[i : i + len(w)] == w:
+                    dp[i] = dp[i + len(w)]
+                if dp[i]:
+                    break
+
+        return dp[0]
 ```
 
 # 
