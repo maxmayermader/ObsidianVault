@@ -252,11 +252,34 @@ class Solution:
 
 # 
 ### Steps
-* 
+* Initialize a dp array of same length as input, filled with 1s
+    - Each position represents the LIS length ending at that index
+    - Base case is 1 since each number alone forms an LIS of length 1
+- Iterate through array from right to left
+    - For each position i, look at all numbers to its right
+    - If current number is smaller than right number (nums[i] < nums[r])
+        - Update the maximum subsequence length possible
+    - Add the maximum found length to dp[i]
+    - Track global maximum in res variable
 
 #### Code
 ```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        dp = [1] * len(nums)
+        res = 0
 
+        for i in range(len(nums)-1, -1, -1):
+            r = i + 1
+            currMax = 0
+            while r < len(nums):
+                if nums[i] < nums[r]:
+                    currMax = max(currMax, dp[r])
+                r+=1
+            dp[i] += currMax
+            res = max(res, dp[i])
+
+        return res
 ```
 
 # 
