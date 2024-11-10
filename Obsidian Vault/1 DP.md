@@ -284,11 +284,30 @@ class Solution:
 
 # [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
 ### Steps
-* 
+* If the sum is odd, return False
+* Target is sum//2
+* dp is the values of the deciosn tree from the bottom up
+	* Loop through backwards nums and clone the dp
+		* add 0 and nums[i] to values of dp
+* if target is in the set then return true
 
 #### Code
 ```python
-
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        total = sum(nums)
+        if total % 2: #If sum is odd, partition impossible
+            return False
+        target = total //2
+        dp = set() # Set of all possible sums
+        dp.add(0)
+        for i in range(len(nums)-1, -1, -1):
+            newDp = dp.copy() # Create new set to avoid modifying during iteration
+            for v in dp:
+                newDp.add(nums[i]+v)
+                newDp.add(v)
+            dp = newDp
+        return target in dp
 ```
 
 
