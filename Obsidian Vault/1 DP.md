@@ -250,7 +250,7 @@ class Solution:
         return dp[0]
 ```
 
-# 
+# [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 ### Steps
 * Initialize a dp array of same length as input, filled with 1s
     - Each position represents the LIS length ending at that index
@@ -282,7 +282,18 @@ class Solution:
         return res
 ```
 
-# 
+# [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+
+#
 ### Steps
 * 
 
