@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sliding Window.md",
+                "file": "2 DP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sliding Window"
+              "title": "2 DP"
             }
           },
           {
@@ -180,9 +180,10 @@
   },
   "active": "fae2faf395e04023",
   "lastOpenFiles": [
-    "1 DP.md",
-    "Sliding Window.md",
     "Leetcode.md",
+    "2 DP.md",
+    "Sliding Window.md",
+    "1 DP.md",
     "Python Documentation.md",
     "[.md",
     "Templates.md",
@@ -207,7 +208,6 @@
     "HW1.md",
     "476.md",
     "Advanced Python.md",
-    "Functions.md",
-    "Basics.md"
+    "Functions.md"
   ]
 }
