@@ -35,7 +35,8 @@
               "title": "2 DP"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -179,13 +180,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fae2faf395e04023",
+  "active": "d13e40fab6aa57c3",
   "lastOpenFiles": [
+    "Sliding Window.md",
     "Bit Manipulation.md",
     "2 DP.md",
     "Greedy.md",
     "Leetcode.md",
-    "Sliding Window.md",
     "1 DP.md",
     "Python Documentation.md",
     "[.md",
