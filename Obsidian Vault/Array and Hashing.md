@@ -236,3 +236,105 @@ class Solution:
         return res if res > 1 else -1
 ```
 
+# [2381. Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/)
+### Steps
+* Create a prefix sum of all the shifts
+	* create a diff array
+	* Add the direction to the start of diff at that position
+	* Subtract the direction from the end + 1 at that pos
+* Get prefix sum by subtracting all prev diffs from current one
+* Go through string
+	* Get new pos by taking the mod of the difference between value at i and diff
+
+###### Why This Works
+Think of it like "turning on" and "turning off" a switch:
+1. When we add a value at position `start`, we're saying "start applying this value here"
+2. When we subtract at position `end + 1`, we're saying "stop applying this value here"
+
+#### Code
+```python
+class Solution:
+    def shiftingLetters(self, s: str, shifts: List[List[int]]) -> str:
+        # Initialize difference array
+        diff = [0] * (len(s) + 1)
+        
+        # Record shifts using difference array
+        for start, end, direction in shifts:
+            value = 1 if direction == 1 else -1
+            diff[start] += value
+            diff[end + 1] -= value
+        
+        # Calculate prefix sum
+        for i in range(1, len(s)):
+            diff[i] += diff[i-1]
+        
+        # Apply shifts to characters
+        result = []
+        for i in range(len(s)):
+            # Calculate new position using modulo to handle wrapping
+            new_pos = (ord(s[i]) - ord('a') + diff[i]) % 26
+            result.append(chr(ord('a') + new_pos))
+            
+        return ''.join(result)
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
+
+# 
+### Steps
+* 
+
+#### Code
+```python
+
+```
+
